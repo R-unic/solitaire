@@ -1,0 +1,37 @@
+{
+  "name": "flamework-game",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "setup-rokit": "rokit trust lune-org/lune && rokit trust rojo-rbx/rojo && rokit install",
+    "build": "npm run setup-rokit && rbxtsc",
+    "build-place": "npm run build && rojo build . -o ./place.rbxl",
+    "watch": "npm run -s build -- -w",
+    "test": "npm run build-place && lune run tests ./place.rbxl"
+  },
+  "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/R-unic/flamework-template.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@rbxts/compiler-types": "latest",
+    "@rbxts/types": "latest",
+    "rbxts-transform-debug": "github:roblox-aurora/rbxts-transform-debug",
+    "rbxts-transformer-flamework": "latest",
+    "roblox-ts": "^3.0.0",
+    "typescript": "~5.5.2"
+  },
+  "dependencies": {
+    "@flamework/core": "latest",
+    "@rbxts/ez-log": "^1.0.0",
+    "@rbxts/janitor": "^1.15.7-ts.0",
+    "@rbxts/lemon-signal": "^1.2.0",
+    "@rbxts/object-utils": "^1.0.4",
+    "@rbxts/twin": "^0.0.4",
+    "node": "^18.20.1"
+  }
+}
