@@ -33,9 +33,9 @@ export function App(): Vide.Node {
       <uiaspectratioconstraint AspectRatio={620 / 852} />
       <Container
         name="Aces"
-        anchorPoint={anchorPoints.topCenter}
-        position={UDim2.fromScale(0.5, 0.06)}
-        size={UDim2.fromScale(1, 0.13)}
+        anchorPoint={anchorPoints.bottomLeft}
+        position={UDim2.fromScale(0, 0.19)}
+        size={UDim2.fromScale(0.575, 0.135)}
       >
         <CardListLayout horizontalAlignment="Left" />
         <Vide.For each={() => numberList(4)}>
@@ -46,13 +46,11 @@ export function App(): Vide.Node {
         name="Hand"
         anchorPoint={anchorPoints.topCenter}
         position={UDim2.fromScale(0.5, 0.2)}
-        size={UDim2.fromScale(1, 0.25)}
+        size={UDim2.fromScale(1, 0.3)}
       >
-        <CardListLayout horizontalAlignment="Center" />
+        <CardListLayout horizontalAlignment="Left" />
         <Vide.For each={() => numberList(7)}>
-          {(_, n) => {
-            print(n())
-            return (
+          {(_, n) => (
             <CardHolder layoutOrder={n}>
               <uilistlayout
                 FillDirection="Vertical"
@@ -65,8 +63,7 @@ export function App(): Vide.Node {
               </Vide.For>
               <Card name="Queen" suit="Hearts" />
             </CardHolder>
-          )
-          }}
+          )}
         </Vide.For>
       </Container>
     </Container>

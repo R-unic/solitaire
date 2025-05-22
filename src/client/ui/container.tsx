@@ -17,7 +17,7 @@ export function Container({ name, position, anchorPoint, size, transparency: bac
       AnchorPoint={anchorPoint}
       Position={position}
       Size={size}
-      BackgroundTransparency={backgroundTransparency ?? 1}
+      BackgroundTransparency={backgroundTransparency ?? 0.9}
       LayoutOrder={layoutOrder}
     >
       {children}
