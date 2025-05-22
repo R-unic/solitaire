@@ -31,7 +31,9 @@
     "@rbxts/janitor": "^1.15.7-ts.0",
     "@rbxts/lemon-signal": "^1.2.0",
     "@rbxts/object-utils": "^1.0.4",
+    "@rbxts/pretty-vide-utils": "^0.0.5",
     "@rbxts/twin": "^0.0.4",
+    "@rbxts/vide": "^0.5.7",
     "node": "^18.20.1"
   }
 }

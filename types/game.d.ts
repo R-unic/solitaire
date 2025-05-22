@@ -1,17 +1,20 @@
-interface CharacterModel extends Model {
-  Humanoid: Humanoid;
-  HumanoidRootPart: Part;
-  Head: Part;
-}
+type CardName =
+  | "Ace"
+  | "King"
+  | "Queen"
+  | "Jack"
+  | "10"
+  | "9"
+  | "8"
+  | "7"
+  | "6"
+  | "5"
+  | "4"
+  | "3"
+  | "2";
 
-interface ToggleSwitchButton extends ImageButton {
-  UIPadding: UIPadding;
-  UICorner: UICorner;
-  UIStroke: UIStroke;
-  UIAspectRatioConstraint: UIAspectRatioConstraint;
-  Node: Frame & {
-    UICorner: UICorner;
-    UIStroke: UIStroke;
-    UIAspectRatioConstraint: UIAspectRatioConstraint;
-  };
-}
+type CardSuit =
+  | "Clubs"
+  | "Diamonds"
+  | "Hearts"
+  | "Spades";
