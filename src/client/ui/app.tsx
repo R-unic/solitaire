@@ -6,8 +6,9 @@ import { usePx } from "./utility/hooks";
 import { Container } from "./container";
 import { Card } from "./card";
 import { CardHolder } from "./card-holder";
-import { CardListLayout } from "./CardListLayout";
+import { CardListLayout } from "./card-list-layout";
 import { AceSlot } from "./ace-slot";
+import { CardBack } from "./card-back";
 
 function numberList(size: number, startsAt = 0): number[] {
   const numbers: number[] = [];
@@ -49,11 +50,23 @@ export function App(): Vide.Node {
       >
         <CardListLayout horizontalAlignment="Center" />
         <Vide.For each={() => numberList(7)}>
-          {(_, n) => (
-            <CardHolder>
+          {(_, n) => {
+            print(n())
+            return (
+            <CardHolder layoutOrder={n}>
+              <uilistlayout
+                FillDirection="Vertical"
+                VerticalAlignment="Top"
+                HorizontalAlignment="Center"
+                Padding={new UDim(-0.8, 0)}
+              />
+              <Vide.For each={() => numberList(n() - 1)}>
+                {() => <CardBack />}
+              </Vide.For>
               <Card name="Queen" suit="Hearts" />
             </CardHolder>
-          )}
+          )
+          }}
         </Vide.For>
       </Container>
     </Container>

@@ -11,8 +11,8 @@ export function Card({ name, suit, position, anchorPoint, size }: CardProps): Vi
     <imagebutton
       AnchorPoint={anchorPoint ?? anchorPoints.center}
       Position={position ?? positions.center}
-      BackgroundTransparency={1}
       Size={size ?? UDim2.fromScale(1, 1)}
+      BackgroundTransparency={1}
     >
       <CardAspectRatio />
       <CardImage name={name} suit={suit} />
