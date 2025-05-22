@@ -6,9 +6,9 @@ import { DEFAULT_CARD_SIZE } from "shared/constants";
 
 import { CardAspectRatio, CardImage, type CardImageProps } from "./card-image";
 
-interface CardProps extends CardImageProps {}
+interface CardButtonProps extends CardImageProps {}
 
-export function Card({ name, suit, position, anchorPoint, size }: CardProps): Vide.Node {
+export function CardButton({ name, suit, position, anchorPoint, size }: CardButtonProps): Vide.Node {
   const px = usePx();
 
   return (

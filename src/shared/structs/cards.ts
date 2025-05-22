@@ -1,5 +1,9 @@
+export interface Card {
+  readonly name: CardName;
+  readonly suit: CardSuit;
+}
+
 export enum CardName {
-  Ace,
   King,
   Queen,
   Jack,
@@ -11,7 +15,8 @@ export enum CardName {
   Five,
   Four,
   Three,
-  Two
+  Two,
+  Ace
 }
 
 export enum CardSuit {

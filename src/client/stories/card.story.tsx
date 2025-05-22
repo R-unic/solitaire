@@ -3,6 +3,6 @@ import Vide from "@rbxts/vide";
 import { story } from "./story";
 import { CardName, CardSuit } from "shared/structs/cards";
 
-import { Card } from "client/ui/card";
+import { CardButton } from "client/ui/card-button";
 
-export = story(() => <Card name={CardName.Queen} suit={CardSuit.Hearts} />);
+export = story(() => <CardButton name={CardName.Queen} suit={CardSuit.Hearts} />);

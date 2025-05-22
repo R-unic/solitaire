@@ -4,12 +4,13 @@ import type { DataType } from "@rbxts/flamework-binary-serializer";
 export const messaging = MessageEmitter.create<MessageData>();
 
 export const enum Message {
-  DealHand
+  StartGame,
+  DealCards,
+  MoveMade,
 }
 
-interface MessageData {
-  [Message.DealHand]: {
-    readonly name: DataType.u8,
-    readonly suit: DataType.u8
-  }[];
+export interface MessageData {
+  [Message.StartGame]: undefined;
+  [Message.DealCards]: DataType.u8[];
+  [Message.MoveMade]: undefined; // TODO: send actual info
 }
