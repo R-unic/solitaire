@@ -1,5 +1,6 @@
 import Vide from "@rbxts/vide";
 
+import { CardName, CardSuit } from "shared/structs/cards";
 import { anchorPoints, positions } from "./utility/positioning";
 import { usePx } from "./utility/hooks";
 
@@ -61,7 +62,7 @@ export function App(): Vide.Node {
               <Vide.For each={() => numberList(n() - 1)}>
                 {() => <CardBack />}
               </Vide.For>
-              <Card name="Queen" suit="Hearts" />
+              <Card name={CardName.Queen} suit={CardSuit.Hearts} />
             </CardHolder>
           )}
         </Vide.For>
