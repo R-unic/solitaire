@@ -3,17 +3,14 @@ import Vide from "@rbxts/vide";
 import { Assets } from "shared/constants";
 import { anchorPoints, positions } from "./utility/positioning";
 import { usePx } from "./utility/hooks";
+import type { ContainerProps } from "./container";
 
-export interface CardImageProps {
+export interface CardImageProps extends ContainerProps {
   readonly name: CardName;
   readonly suit: CardSuit;
-  readonly position?: UDim2;
-  readonly anchorPoint?: Vector2;
-  readonly size?: UDim2;
 }
 
 export function CardImage({ name, suit, position, anchorPoint, size }: CardImageProps): Vide.Node {
-  const px = usePx();
   const cardImage = Assets.Cards[suit][name];
 
   return (
@@ -23,7 +20,17 @@ export function CardImage({ name, suit, position, anchorPoint, size }: CardImage
       Size={size ?? UDim2.fromScale(1, 1)}
       Image={cardImage.Texture}
     >
-      <uicorner CornerRadius={new UDim(0, px(22))} />
+      <CardAspectRatio />
+      <CardUICorner />
     </imagelabel>
   );
+}
+
+export function CardUICorner(): Vide.Node {
+  const px = usePx();
+  return <uicorner CornerRadius={new UDim(0, px.scale(12))} />;
+}
+
+export function CardAspectRatio(): Vide.Node {
+  return <uiaspectratioconstraint AspectRatio={0.7} />;
 }

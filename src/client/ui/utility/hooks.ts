@@ -1,6 +1,6 @@
 import { useCamera, useDebounceSource, useEventListener, usePrevious } from "@rbxts/pretty-vide-utils";
 
-interface ScaleFunction {
+export interface ScaleFunction {
   /**
    * Scales `pixels` based on the current viewport size and rounds the result.
    */
