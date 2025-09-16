@@ -10,14 +10,14 @@ export interface ContainerProps {
   readonly layoutOrder?: Vide.Derivable<number>;
 }
 
-export function Container({ name, position, anchorPoint, size, transparency: backgroundTransparency, layoutOrder, children }: ContainerProps & Vide.PropsWithChildren): Vide.Node {
+export function Container({ name, position, anchorPoint, size, transparency = 0.9, layoutOrder, children }: ContainerProps & Vide.PropsWithChildren): Vide.Node {
   return (
     <frame
       Name={name}
       AnchorPoint={anchorPoint}
       Position={position}
       Size={size}
-      BackgroundTransparency={backgroundTransparency ?? 0.9}
+      BackgroundTransparency={transparency}
       LayoutOrder={layoutOrder}
     >
       {children}
